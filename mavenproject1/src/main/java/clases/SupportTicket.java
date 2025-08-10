@@ -12,32 +12,38 @@ import java.time.LocalDateTime;
 
 public class SupportTicket {
     private IssueType issueType;
-    private TicketStatus status;
+    private TicketState state;
     private LocalDateTime createdAt;
     private Customer customer;
 
     public SupportTicket(IssueType issueType, Customer customer) {
         this.issueType = issueType;
         this.customer = customer;
-        this.status = TicketStatus.OPEN;
+        this.state = new OpenState();
         this.createdAt = LocalDateTime.now();
     }
 
-    public void escalate() {
-        this.status = TicketStatus.ESCALATED;
+     public void escalate() {
+        this.state = new EscalatedState();
+        this.state.handle(this);
     }
 
+
+
     public void close() {
-        this.status = TicketStatus.CLOSED;
+        this.state = new ClosedState();
+        this.state.handle(this);
     }
+
 
     public IssueType getIssueType() {
         return issueType;
     }
 
     public TicketStatus getStatus() {
-        return status;
+        return state.getStatus();
     }
+
 
     public LocalDateTime getCreatedAt() {
         return createdAt;
