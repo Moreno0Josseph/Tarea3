@@ -11,10 +11,12 @@ package clases;
 public class TicketService {
     private PaymentProcessor paymentProcessor;
     private PricePolicy pricePolicy;
+    private RefundStrategy refundStrategy;
 
-    public TicketService(PaymentProcessor paymentProcessor, PricePolicy pricePolicy) {
+    public TicketService(PaymentProcessor paymentProcessor, PricePolicy pricePolicy, RefundStrategy refundStrategy) {
         this.paymentProcessor = paymentProcessor;
         this.pricePolicy = pricePolicy;
+        this.refundStrategy = refundStrategy;
     }
 
     public Ticket purchase(Reservation reservation) {
@@ -28,6 +30,6 @@ public class TicketService {
     }
 
     public boolean refund(Ticket ticket) {
-        return true;
+        return refundStrategy.processRefund(ticket);
     }
 }
