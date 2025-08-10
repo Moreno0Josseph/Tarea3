@@ -10,12 +10,7 @@ package clases;
  * @author Manue
  */
 public class OpenState implements TicketState{
-=======
- * @author gutav
- */
-public class OpenState implements TicketState {
->>>>>>> ccce021478907634743578f0380fdf29b0f2e3c6
-    @Override
+   @Override
     public void handle(SupportTicket ticket) {
         System.out.println("Ticket abierto. En espera de atención.");
     }
@@ -25,7 +20,3 @@ public class OpenState implements TicketState {
         return TicketStatus.OPEN;
     }
 }
-<<<<<<< HEAD
-=======
-
->>>>>>> ccce021478907634743578f0380fdf29b0f2e3c6
