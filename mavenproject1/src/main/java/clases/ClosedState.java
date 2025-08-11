@@ -6,11 +6,7 @@ package clases;
 
 /**
  *
-<<<<<<< HEAD
  * @author Manue
-=======
- * @author gutav
->>>>>>> ccce021478907634743578f0380fdf29b0f2e3c6
  */
 public class ClosedState implements TicketState {
     @Override

@@ -5,7 +5,7 @@ import creacional.EventFactory;
 import creacional.TheatreEventFactory;
 import estructural.BeverageDecorator;
 import estructural.TicketDecorator;
-import java.lang.foreign.Linker.Option;
+import clases.Option;
 import java.util.List;
 
 public class TicketEnVivo {

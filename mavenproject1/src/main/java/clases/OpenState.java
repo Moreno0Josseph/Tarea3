@@ -6,7 +6,6 @@ package clases;
 
 /**
  *
-<<<<<<< HEAD
  * @author Manue
  */
 public class OpenState implements TicketState{
